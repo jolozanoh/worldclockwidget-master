@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wc="http://schemas.android.com/apk/res/ch.corten.aha.worldclock" >
+    <PreferenceCategory android:title="@string/general">
+        <ch.corten.aha.preference.WeatherApiPreference
+            android:key="@string/WeatherApiPreference_key"
+            android:title="@string/WeatherApiPreference_title"
+            android:dialogTitle="@string/WeatherApiPreference_dialog_title"
+            android:summary="@string/WeatherApiPreference_summary"
+            android:dialogLayout="@layout/weather_key"
+            android:positiveButtonText="@string/close"
+            android:negativeButtonText="@null"/>
+        <EditTextPreference
+            android:defaultValue="@string/new_api_key_default_text"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/new_api_key_title"
+            android:summary="@string/new_api_key_summary"
+            android:key="@string/new_api_key" />
+        <CheckBoxPreference
+            android:title="@string/automatically_sort_cities"
+            android:key="@string/auto_sort_clocks_key"
+            android:summary="@string/disable_to_sort_cities_manually"
+            android:defaultValue="true" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/weather">
+        <ListPreference
+            android:title="@string/temperature_unit"
+            android:key="@string/temp_unit_key"
+            android:summary="@string/change_temperature_unit"
+            android:entryValues="@array/temp_unit_values"
+            android:entries="@array/temp_units"
+            android:defaultValue="@string/defaul_temp_unit" />
+        <ListPreference
+            android:title="@string/wind_speed_unit"
+            android:key="@string/wind_speed_unit_key"
+            android:summary="@string/change_wind_speed_unit"
+            android:entryValues="@array/speed_unit_values"
+            android:entries="@array/speed_units"
+            android:defaultValue="@string/default_speed_unit" />
+        <CheckBoxPreference
+            android:title="@string/disable_automatic_update"
+            android:key="@string/disable_automatic_weather_update_key"
+            android:summary="@string/disable_automatic_update_of_weather_conditions"
+            android:defaultValue="false" />
+        <ListPreference
+            android:title="@string/weather_data_purge_time"
+            android:dialogTitle="@string/weather_data_purge_time_dialog"
+            android:key="@string/weather_purge_time_key"
+            android:summary="@string/weather_data_purge_time_summary"
+            android:entries="@array/weather_purge_times"
+            android:entryValues="@array/weather_purge_time_values"
+            android:defaultValue="@string/default_weather_purge_time" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/widget">
+        <CheckBoxPreference
+            android:title="@string/use_custom_colors"
+            android:key="@string/use_custom_colors_key"
+            android:defaultValue="false" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:title="@string/background"
+            android:key="@string/background_color_key"
+            android:summary="@string/change_background_color"
+            android:defaultValue="@android:color/black"
+            android:dependency="@string/use_custom_colors_key"
+            alphaSlider="true" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:title="@string/foreground"
+            android:key="@string/foreground_color_key"
+            android:summary="@string/change_foreground_color"
+            android:defaultValue="@android:color/white"
+            android:dependency="@string/use_custom_colors_key"
+            alphaSlider="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/about">
+        <ch.corten.aha.preference.MailPreference
+            android:key="feedback"
+            android:title="@string/feedback_title"
+            android:summary="@string/feedback_summary"
+            wc:recipient="@string/feedback_email"
+            wc:subject="@string/app_name" />
+        <ch.corten.aha.preference.AboutPreference
+            android:title="@string/about_title"
+            android:dialogTitle="@string/about_title"
+            android:dialogLayout="@layout/about_dialog"
+            android:positiveButtonText="@string/close"
+            android:negativeButtonText="@null" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

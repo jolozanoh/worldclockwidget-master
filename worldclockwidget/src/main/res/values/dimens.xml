@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="widget_padding_horizontal">8dp</dimen>
+    <dimen name="widget_padding_vertical">2dp</dimen>
+    <dimen name="widget_padding">8dp</dimen>
+    <dimen name="weather_grid_item_padding_top">5dp</dimen>
+    <dimen name="weather_grid_item_padding_bottom">8dp</dimen>
+    <dimen name="weather_grid_item_padding_horizontal">8dp</dimen>
+    <dimen name="weather_grid_vertival_spacing">8dp</dimen>
+    <dimen name="weather_grid_horizontal_spacing">10dp</dimen>
+    <integer name="worldclock_widget_max_entries">4</integer>
+
+</resources>
